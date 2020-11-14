@@ -53,4 +53,4 @@ mongoWatch("toDoItems",next => {
 })
 //ToDo: Unsubscribe?
 
-httpServer.listen(8080)
+httpServer.listen(process.env.PORT||8080)

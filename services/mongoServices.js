@@ -18,10 +18,10 @@ export const mongoAdd = async (collectionName,document) => {
 }
 
 //gets all items in collection
-export const mongoGetAll = async (collectionName) => {
+export const mongoGetAll = async (collectionName,query) => {
     let documentsArr;
     const client = await mongoClient.connect(uri, { useUnifiedTopology: true });
-    documentsArr = await client.db("VuliToDoList").collection(collectionName).find().toArray();
+    documentsArr = await client.db("VuliToDoList").collection(collectionName).find(query).toArray();
     await client.close()
     return documentsArr;
 }

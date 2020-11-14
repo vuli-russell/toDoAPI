@@ -3,7 +3,12 @@ import { mongoAdd, mongoGetAll, mongoUpdate, mongoDelete } from "../services/mon
 //Todo: add error catching to all functions
 
 export const todoGetAll = async (request, response) => {
-    response.send((await mongoGetAll("toDoItems")));
+    let { user } = request.query
+    let query = {
+        users: user
+    }
+
+    response.send((await mongoGetAll("toDoItems",query)));
 }
 
 export const todoPost = async (request, response) => {

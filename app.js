@@ -48,7 +48,7 @@ io.on("connection", onConnect)
 
 //push updates to client on change of toDoItems collection
 mongoWatch("toDoItems",next => {
-    console.log(next)
+    console.log(`emmiting ${next}`)
     io.emit("toDoChange",next)
 })
 //ToDo: Unsubscribe?

@@ -30,7 +30,7 @@ const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
     cors: {
-    origin: "https://todolist.vulirussell.io/",
+    origin: "https://todolist.vulirussell.io/:*",
     methods: ["GET", "POST","PUT","DELETE"],
     }
 });

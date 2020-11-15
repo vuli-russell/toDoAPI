@@ -15,6 +15,7 @@ app.use(bodyParser.json())
 //Todo: log to a file
 app.use(((request,response,next) => {
     console.log(`${(new Date).toString()} - ${request.method} at ${request.url}.\nBody: ${request.body}`)
+    console.log(request.header)
     next();
 })) 
 
@@ -30,7 +31,7 @@ const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
     cors: {
-    origin: "https://todolist.vulirussell.io/:*",
+    origin: "https://todolist.vulirussell.io/",
     methods: ["GET", "POST","PUT","DELETE"],
     }
 });

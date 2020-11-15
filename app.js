@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 //Todo: log to a file
 app.use(((request,response,next) => {
     console.log(`${(new Date).toString()} - ${request.method} at ${request.url}.\nBody: ${request.body}`)
-    console.log(`headers = ${request.header}`)
+    console.log(`headers = ${request.headers}`)
     next();
 })) 
 

@@ -30,7 +30,7 @@ const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
     cors: {
-    origin: "http://localhost:3000",
+    origin: "https://todolist-6ea69.web.app",
     methods: ["GET", "POST"],
     }
 });
